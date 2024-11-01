@@ -24,4 +24,6 @@ urlpatterns = [
     path('home', views.app3),
     path('about', views.app4),
     path('contact', views.app5),
+    path('display', views.display),
+    path('add_details', views.add_details),
 ]
