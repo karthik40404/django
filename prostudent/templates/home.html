@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>home</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="number" name="roll_no" placeholder="roll">
+        <input type="text" name="name" placeholder="name">
+        <input type="number" name="age" placeholder="age">
+        <input type="text" name="classes" placeholder="class">
+        <input type="submit" value="add">
+    </form>
+    <table border="2">
+        <tr>
+            <th>roll_no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>class</th>
+        </tr>
+        {% for std in students %}
+        <tr>
+            <td>{{std.roll_no}}</td>
+            <td>{{std.name}}</td>
+            <td>{{std.age}}</td>
+            <td>{{std.classes}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+        <img src="{% static 'img/img1.jpg'%}" alt="Centered Image">
+</body>
+</html>
