@@ -6,3 +6,6 @@ class Student(models.Model):
     name=models.TextField()
     age=models.IntegerField()
     classes=models.IntegerField()
+
+    def __str__(self):
+        return self.name
